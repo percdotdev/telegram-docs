@@ -1,0 +1,49 @@
+---
+title: Configuration
+description: Configuration Guide for the Telegram Advertiser Tool
+---
+
+# Configuration
+
+The `config.toml` file is the central configuration file for the Telegram Advertiser Tool. This file allows you to set up the necessary parameters for connecting to the Telegram API and controlling the behavior of the message sending operations.
+
+## Default Configuration
+This is how a default configuration file looks like:
+
+```toml
+[telegram]
+# Get your API ID/HASH from https://my.telegram.org/auth
+
+phone_number="+12 34567890"
+api_id=123456789
+api_hash="abcdefghijklmnopqrstuvwxyz123456"
+
+[sending]
+# The send interval is how long you want to wait between sending messages.
+# The loop interval is how long you want to wait before re-sending messages to all the groups.
+# We recommend not touching these values unless you know what you are doing.
+
+send_interval=0
+loop_interval=5
+```
+
+## Configuration Parameters
+
+### Telegram Configuration
+
+- `phone_number`: `string` - Your phone number in international format (e.g., `+1 123 456 7890`).
+- `api_id`: `integer` - Your Telegram API ID.
+- `api_hash`: `string` - Your Telegram API hash.
+
+### Sending Configuration
+
+- `send_interval`: `integer` - The time in seconds to wait between sending messages. Default is `0`.
+- `loop_interval`: `integer` - The time in minutes to wait before re-sending messages to all the groups. Default is `5`.
+
+## Customizing the Configuration
+
+To customize the configuration, you can modify the values in the `config.toml` file. Make sure to follow the correct format and syntax for each parameter.
+
+## Next Steps
+
+Now that you've configured the Telegram Advertiser Tool, you're ready to start using it to send messages to multiple groups. Check out the [Usage Guide](./usage) to learn how to send messages and manage your groups effectively. 

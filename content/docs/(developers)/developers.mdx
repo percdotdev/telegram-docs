@@ -1,0 +1,30 @@
+---
+title: Developers
+description: Learn how to use the Telegram Advertiser Tool as a developer.
+---
+
+# Environment Variables
+
+The Telegram Advertiser Tool uses environment variables to configure the application. You can set these variables in a `.env` file in the root of the project.
+
+```bash
+FERNET_DECRYPTION_KEY=your_key_here
+```
+
+## FERNET_DECRYPTION_KEY
+
+This key is used to encrypt and decrypt the Telegram API token. It is recommended to use a random key with 32 bytes.
+
+### How to generate a valid key
+
+You can generate a valid key using the following Python code:
+
+```python
+# py -m pip install cryptography --upgrade
+from cryptography.fernet import Fernet
+
+key = Fernet.generate_key()
+print(key)
+```
+
+Paste the generated key in the `.env` file without the annotations. (`The 'b' and the string quotes part`)
